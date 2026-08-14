@@ -1,0 +1,100 @@
+name: Beautify vehicle photos
+
+# The heavy image work runs here, not on Vercel and not on a dev machine:
+#   - Linux, so sharp and the ONNX segmentation model load natively
+#   - 6h job timeout, against ~30-40 min for the full 133-vehicle backfill
+#   - a real filesystem for intermediate images
+#
+# Triggered manually for the backfill, or by repository_dispatch from the
+# Vercel cron when new stock appears.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to process
+        type: choice
+        default: test
+        options: [test, backfill, incremental]
+      limit:
+        description: "Max vehicles (test mode); 0 = no limit"
+        default: "4"
+      photos:
+        description: Photos per vehicle
+        default: "3"
+      scene:
+        description: "Force one scene (blank = deterministic per vehicle)"
+        default: ""
+  repository_dispatch:
+    types: [new-stock]
+
+concurrency:
+  # Never let two runs write the manifest at once.
+  group: beautify
+  cancel-in-progress: false
+
+jobs:
+  beautify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install pipeline dependencies
+        working-directory: scripts/beautify
+        run: npm install --no-audit --no-fund
+
+      - name: Resolve run arguments
+        id: args
+        run: |
+          MODE="${{ github.event.inputs.mode || 'incremental' }}"
+          case "$MODE" in
+            test)        ARGS="--limit ${{ github.event.inputs.limit || 4 }} --out ./out" ;;
+            backfill)    ARGS="--upload" ;;
+            incremental) ARGS="--only-new --upload" ;;
+          esac
+          if [ -n "${{ github.event.inputs.scene }}" ]; then
+            ARGS="$ARGS --scene ${{ github.event.inputs.scene }}"
+          fi
+          echo "args=$ARGS --photos ${{ github.event.inputs.photos || 3 }}" >> "$GITHUB_OUTPUT"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+
+      - name: Run pipeline
+        working-directory: scripts/beautify
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          # Set once a transparent logo exists in the repo.
+          BEAUTIFY_LOGO_PATH: ${{ vars.BEAUTIFY_LOGO_PATH }}
+          BEAUTIFY_LOGO_BLEND: ${{ vars.BEAUTIFY_LOGO_BLEND }}
+        run: >
+          node --experimental-strip-types --import ./register.mjs
+          run.mjs ${{ steps.args.outputs.args }}
+
+      # Test mode produces local files for review rather than publishing.
+      - name: Upload test batch for review
+        if: steps.args.outputs.mode == 'test'
+        uses: actions/upload-artifact@v4
+        with:
+          name: beautify-test-batch
+          path: scripts/beautify/out/
+          retention-days: 14
+
+      # Real runs publish images to blob storage and commit only the manifest.
+      - name: Commit manifest
+        if: steps.args.outputs.mode != 'test'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- src/data/beautify-manifest.json; then
+            echo "manifest unchanged"
+          else
+            git add src/data/beautify-manifest.json
+            git commit -m "chore: update beautified photo manifest [skip ci]"
+            git push
+          fi

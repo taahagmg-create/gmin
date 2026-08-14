@@ -1,0 +1,29 @@
+{
+  "name": "esteem-cars",
+  "version": "0.1.0",
+  "private": true,
+  "comment:webpack": "Next 16 defaults to Turbopack, which needs the native @next/swc binary. Smart App Control is Enforced on this machine and blocks that .node file, so Next falls back to WASM bindings, which Turbopack cannot use. --webpack works on WASM. Drop these flags on any machine where the native binary loads (CI, Vercel) to get the faster Turbopack path.",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.3.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.3"
+  }
+}
