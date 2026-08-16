@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/hero/hero-section";
 import { OfferStrip } from "@/components/offer-strip";
+import { InventoryTeaser } from "@/components/inventory/inventory-teaser";
+import { TrustStrip } from "@/components/trust-strip";
+
+export const revalidate = 1800;
 
 /** The six-beat homepage sequence from brief §4, one section each. */
 const FUNNEL = [
@@ -35,11 +39,13 @@ const FUNNEL = [
   {
     beat: "05",
     name: "Inventory teaser",
+    built: true,
     detail: "3–6 featured vehicles, 3D spin thumbnails auto-rotating slowly on hover or in view.",
   },
   {
     beat: "06",
     name: "Trust strip",
+    built: true,
     detail: "Lender partner logos, review count and rating, peace-of-mind proof points.",
   },
 ];
@@ -59,6 +65,8 @@ export default function HomePage() {
       {/* Beats 01 and 02 are full-bleed, so they sit outside the page container. */}
       <HeroSection />
       <OfferStrip />
+      <InventoryTeaser />
+      <TrustStrip />
 
       <div className="mx-auto max-w-5xl px-5 py-16">
         <section>

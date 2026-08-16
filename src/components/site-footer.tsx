@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LOCATIONS } from "@/lib/locations";
 
 export function SiteFooter() {
   return (
@@ -7,15 +8,41 @@ export function SiteFooter() {
         <div>
           <p className="font-semibold text-white">Esteem Car Traders</p>
           <p className="mt-2 text-neutral-500">Peace of mind, delivered.</p>
+          <div className="mt-4 flex flex-wrap gap-3 text-xs">
+            <Link href="/inventory" className="hover:text-accent">
+              Inventory
+            </Link>
+            <Link href="/service-shield" className="hover:text-accent">
+              Service Shield
+            </Link>
+            <Link href="/finance" className="hover:text-accent">
+              Finance
+            </Link>
+            <Link href="/about" className="hover:text-accent">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-accent">
+              Contact
+            </Link>
+          </div>
         </div>
-        <div>
-          <p className="font-semibold text-white">Takanini</p>
-          <p className="mt-2 text-neutral-500">Address TBC · Hours TBC</p>
-        </div>
-        <div>
-          <p className="font-semibold text-white">New Lynn</p>
-          <p className="mt-2 text-neutral-500">Address TBC · Hours TBC</p>
-        </div>
+        {Object.values(LOCATIONS).map((loc) => (
+          <div key={loc.name}>
+            <p className="font-semibold text-white">{loc.name.replace("Esteem Cars ", "")}</p>
+            <address className="mt-2 not-italic text-neutral-500">
+              {loc.address}, {loc.suburb} {loc.postcode}
+            </address>
+            <p className="mt-1 text-neutral-500">
+              {loc.hours.map((h) => `${h.days}: ${h.time}`).join(" · ")}
+            </p>
+            <a
+              href={`tel:${loc.phone.e164}`}
+              className="mt-1 inline-block text-neutral-400 hover:text-accent"
+            >
+              {loc.phone.display}
+            </a>
+          </div>
+        ))}
       </div>
       <div className="border-t border-ink-line px-5 py-4 text-center text-xs text-neutral-600">
         <Link href="/contact" className="hover:text-neutral-300">
