@@ -16,33 +16,45 @@ const MODEL = "gemini-3-pro-image";
 /** Quoted price for a 1K/2K image. Recorded per image so spend is observed. */
 const COST_PER_IMAGE_USD = 0.134;
 
+const MAX_RETRIES = 4;
+const RETRY_CODES = new Set([429, 500, 502, 503, 504]);
+
 async function generateScene(prompt, apiKey) {
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-    },
-  );
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+      },
+    );
 
-  if (!res.ok) {
-    throw new Error(`gemini ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  }
-
-  const json = await res.json();
-  const parts = json.candidates?.[0]?.content?.parts ?? [];
-  for (const p of parts) {
-    const inline = p.inline_data ?? p.inlineData;
-    if (inline?.data) {
-      return {
-        buffer: Buffer.from(inline.data, "base64"),
-        tokens: json.usageMetadata?.candidatesTokenCount ?? null,
-        costUsd: COST_PER_IMAGE_USD,
-      };
+    if (!res.ok) {
+      const body = (await res.text()).slice(0, 300);
+      if (RETRY_CODES.has(res.status) && attempt < MAX_RETRIES) {
+        const delay = Math.min(2 ** attempt * 2000, 30000);
+        console.log(`    gemini ${res.status}, retry ${attempt + 1}/${MAX_RETRIES} in ${(delay / 1000).toFixed(0)}s…`);
+        await new Promise((r) => setTimeout(r, delay));
+        continue;
+      }
+      throw new Error(`gemini ${res.status}: ${body}`);
     }
+
+    const json = await res.json();
+    const parts = json.candidates?.[0]?.content?.parts ?? [];
+    for (const p of parts) {
+      const inline = p.inline_data ?? p.inlineData;
+      if (inline?.data) {
+        return {
+          buffer: Buffer.from(inline.data, "base64"),
+          tokens: json.usageMetadata?.candidatesTokenCount ?? null,
+          costUsd: COST_PER_IMAGE_USD,
+        };
+      }
+    }
+    throw new Error("no image in Gemini response");
   }
-  throw new Error("no image in Gemini response");
 }
 
 /** Vertical alpha gradient used to fade the reflection out. */

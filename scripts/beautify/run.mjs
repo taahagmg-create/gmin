@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { beautifyPhoto } from "./pipeline.mjs";
 
-console.log("=== beautify pipeline v4 ===");
 
 /*
  * Deliberately the RAW Autostock source, not @/lib/inventory/index.ts.
