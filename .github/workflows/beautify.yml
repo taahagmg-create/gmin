@@ -1,13 +1,5 @@
 name: Beautify vehicle photos
 
-# The heavy image work runs here, not on Vercel and not on a dev machine:
-#   - Linux, so sharp and the ONNX segmentation model load natively
-#   - 6h job timeout, against ~30-40 min for the full 133-vehicle backfill
-#   - a real filesystem for intermediate images
-#
-# Triggered manually for the backfill, or by repository_dispatch from the
-# Vercel cron when new stock appears.
-
 on:
   workflow_dispatch:
     inputs:
@@ -15,7 +7,7 @@ on:
         description: What to process
         type: choice
         default: test
-        options: [test, backfill, incremental]
+        options: [test, backfill, incremental, generate-scenes]
       limit:
         description: "Max vehicles (test mode); 0 = no limit"
         default: "4"
@@ -29,7 +21,6 @@ on:
     types: [new-stock]
 
 concurrency:
-  # Never let two runs write the manifest at once.
   group: beautify
   cancel-in-progress: false
 
@@ -54,17 +45,22 @@ jobs:
         run: |
           MODE="${{ github.event.inputs.mode || 'incremental' }}"
           case "$MODE" in
-            test)        ARGS="--limit ${{ github.event.inputs.limit || 4 }} --out ./out" ;;
-            backfill)    ARGS="--upload" ;;
-            incremental) ARGS="--only-new --upload" ;;
+            test)             ARGS="--limit ${{ github.event.inputs.limit || 4 }} --out ./out" ;;
+            backfill)         ARGS="--upload" ;;
+            incremental)      ARGS="--only-new --upload" ;;
+            generate-scenes)  ARGS="" ;;
           esac
-          if [ -n "${{ github.event.inputs.scene }}" ]; then
+          if [ -n "${{ github.event.inputs.scene }}" ] && [ "$MODE" != "generate-scenes" ]; then
             ARGS="$ARGS --scene ${{ github.event.inputs.scene }}"
           fi
-          echo "args=$ARGS --photos ${{ github.event.inputs.photos || 3 }}" >> "$GITHUB_OUTPUT"
+          if [ "$MODE" != "generate-scenes" ]; then
+            ARGS="$ARGS --photos ${{ github.event.inputs.photos || 3 }}"
+          fi
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
 
       - name: Run pipeline
+        if: steps.args.outputs.mode != 'generate-scenes'
         working-directory: scripts/beautify
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -76,7 +72,16 @@ jobs:
           node --experimental-strip-types --import ./register.mjs
           run.mjs ${{ steps.args.outputs.args }}
 
-      # Test mode produces local files for review rather than publishing.
+      - name: Generate static scenes
+        if: steps.args.outputs.mode == 'generate-scenes'
+        working-directory: scripts/beautify
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: >
+          node --experimental-strip-types --import ./register.mjs
+          generate-scenes.mjs --force
+
       - name: Upload test batch for review
         if: steps.args.outputs.mode == 'test'
         uses: actions/upload-artifact@v4
@@ -85,9 +90,17 @@ jobs:
           path: scripts/beautify/out/
           retention-days: 14
 
-      # Real runs publish images to blob storage and commit only the manifest.
+      - name: Commit scenes
+        if: steps.args.outputs.mode == 'generate-scenes'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/beautify/scenes/
+          git commit -m "chore: add static background scenes [skip ci]"
+          git push
+
       - name: Commit manifest
-        if: steps.args.outputs.mode != 'test'
+        if: steps.args.outputs.mode == 'backfill' || steps.args.outputs.mode == 'incremental'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

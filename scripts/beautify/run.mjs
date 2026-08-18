@@ -1,29 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
-import { beautifyPhoto } from "./pipeline.mjs";
+import { beautifyPhoto, generateScene } from "./pipeline.mjs";
 
-
-/*
- * Deliberately the RAW Autostock source, not @/lib/inventory/index.ts.
- *
- * The index wraps everything in the beautified decorator, which swaps image
- * URLs for already-generated ones — so running the pipeline through it would
- * feed its own output back in and beautify beautified photos on every rerun.
- * This must always read pristine source images.
- */
 const { createAutostockSource } = await import("@/lib/inventory/autostock.ts");
 const { sceneForVehicle, getScene } = await import("@/lib/beautify/scenes.ts");
 
 const listVehicles = () => createAutostockSource().listVehicles();
-
-/**
- * Batch runner for the beautification pipeline.
- *
- * Backfill (GitHub Actions):   node ... run.mjs --upload
- * Test batch (reviewable):     node ... run.mjs --limit 4 --out ./out
- * Incremental (new stock):     node ... run.mjs --only-new --upload
- * Estimate only, no spend:     node ... run.mjs --dry-run
- */
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -42,7 +24,7 @@ const UPLOAD = flag("upload");
 const ONLY_NEW = flag("only-new");
 
 const MANIFEST_PATH = path.resolve(import.meta.dirname, "../../src/data/beautify-manifest.json");
-const COST_PER_IMAGE = 0.134;
+const SCENES_DIR = path.resolve(import.meta.dirname, "scenes");
 const CONCURRENCY = 2;
 
 const apiKey = process.env.GEMINI_API_KEY;
@@ -51,7 +33,6 @@ if (!apiKey && !DRY_RUN) {
   process.exit(1);
 }
 
-/** Optional logo overlay. Skipped loudly rather than approximated. */
 function loadLogo() {
   const p = process.env.BEAUTIFY_LOGO_PATH;
   if (!p) {
@@ -83,6 +64,19 @@ function loadManifest() {
   }
 }
 
+/** Load pre-made scene images from scripts/beautify/scenes/ */
+function loadStaticScenes() {
+  const scenes = {};
+  if (!fs.existsSync(SCENES_DIR)) return scenes;
+  for (const file of fs.readdirSync(SCENES_DIR)) {
+    if (/\.(jpe?g|png)$/i.test(file)) {
+      const id = path.basename(file, path.extname(file));
+      scenes[id] = fs.readFileSync(path.join(SCENES_DIR, file));
+    }
+  }
+  return scenes;
+}
+
 async function upload(buffer, key) {
   const { put } = await import("@vercel/blob");
   const res = await put(key, buffer, {
@@ -95,6 +89,14 @@ async function upload(buffer, key) {
 
 const manifest = loadManifest();
 const logo = loadLogo();
+const staticScenes = loadStaticScenes();
+const useStatic = Object.keys(staticScenes).length > 0;
+
+if (useStatic) {
+  console.log(`static scenes loaded: ${Object.keys(staticScenes).join(", ")} (no Gemini cost for backgrounds)`);
+} else {
+  console.log("no static scenes in scenes/ — will generate one background per vehicle via Gemini");
+}
 
 console.log("loading inventory…");
 let vehicles = await listVehicles();
@@ -112,9 +114,10 @@ for (const v of vehicles) {
   }
 }
 
+const estCost = useStatic ? 0 : vehicles.length * 0.134;
 console.log(
-  `\n${vehicles.length} vehicles -> ${jobs.length} images ` +
-    `(~$${(jobs.length * COST_PER_IMAGE).toFixed(2)} at $${COST_PER_IMAGE}/image)`,
+  `\n${vehicles.length} vehicles -> ${jobs.length} images` +
+    (useStatic ? " (static scenes, $0 Gemini cost)" : ` (~$${estCost.toFixed(2)} for ${vehicles.length} scene generations)`),
 );
 
 if (DRY_RUN) {
@@ -128,20 +131,44 @@ if (DRY_RUN) {
 
 if (OUT_DIR) fs.mkdirSync(OUT_DIR, { recursive: true });
 
+// Cache generated scenes per vehicle so all photos of one car share a background.
+const generatedSceneCache = new Map();
+
+async function getSceneBuffer(scene, vehicleId) {
+  if (useStatic && staticScenes[scene.id]) return staticScenes[scene.id];
+  const key = `${scene.id}:${vehicleId}`;
+  if (!generatedSceneCache.has(key)) {
+    console.log(`  generating ${scene.id} scene for ${vehicleId}…`);
+    const { buffer } = await generateScene(scene.prompt, apiKey);
+    generatedSceneCache.set(key, buffer);
+  }
+  return generatedSceneCache.get(key);
+}
+
 let spent = 0;
 let done = 0;
 let failed = 0;
+let skipped = 0;
 const started = Date.now();
 
 async function processJob(job, index) {
   const label = `${job.vehicle.slug} #${index}`;
   try {
+    const sceneBuffer = await getSceneBuffer(job.scene, job.vehicle.id);
+
     const result = await beautifyPhoto({
       sourceUrl: job.source,
       scene: job.scene,
+      sceneBuffer,
       apiKey,
       logo,
     });
+
+    if (result.skipped) {
+      skipped++;
+      console.log(`  skip ${label.padEnd(44)} ${result.reason}`);
+      return;
+    }
 
     spent += result.costUsd;
     const base = `vehicles/${job.vehicle.id}-${index}`;
@@ -154,7 +181,6 @@ async function processJob(job, index) {
     } else {
       const fullPath = path.join(OUT_DIR || ".", `${job.vehicle.id}-${index}-${job.scene.id}.jpg`);
       fs.writeFileSync(fullPath, result.full);
-      // Keep the source beside it so the pair can be compared directly.
       const srcPath = path.join(OUT_DIR || ".", `${job.vehicle.id}-${index}-SOURCE.jpg`);
       if (!fs.existsSync(srcPath)) {
         const r = await fetch(job.source, { headers: { "user-agent": "EsteemCarsSite/1.0" } });
@@ -182,7 +208,7 @@ async function processJob(job, index) {
     done++;
     console.log(
       `  ok   ${label.padEnd(44)} ${job.scene.id.padEnd(15)} ` +
-        `$${spent.toFixed(2)} spent, ${done}/${jobs.length}`,
+        `$${spent.toFixed(2)} spent, ${done}/${jobs.length - skipped}`,
     );
   } catch (e) {
     failed++;
@@ -207,7 +233,7 @@ fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
 
 const mins = ((Date.now() - started) / 60000).toFixed(1);
 console.log(
-  `\ndone: ${done} ok, ${failed} failed, in ${mins} min\n` +
+  `\ndone: ${done} ok, ${skipped} skipped, ${failed} failed, in ${mins} min\n` +
     `spend this run: $${spent.toFixed(2)}   lifetime: $${manifest.totalCostUsd.toFixed(2)}`,
 );
 process.exit(failed > 0 && done === 0 ? 1 : 0);

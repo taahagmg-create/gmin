@@ -2,24 +2,20 @@ import sharp from "sharp";
 import { removeBackground } from "@imgly/background-removal-node";
 
 /**
- * Beautify one photo: segment the car, generate an empty scene, composite.
+ * Beautify one photo: segment the car, composite onto a scene.
  *
  * THE GUARANTEE: the car's pixels are never resized, resampled, colour-managed
  * or passed through the image model. The canvas is the source photo's exact
  * dimensions, the generated scene is resized to fit *that*, and the cutout is
- * composited at (0,0) at native size. Any change to that arrangement — scaling
- * the car to fit a differently-sized scene, for instance — breaks the promise
- * this whole pipeline exists to keep.
+ * composited at (0,0) at native size.
  */
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-3-pro-image";
-/** Quoted price for a 1K/2K image. Recorded per image so spend is observed. */
 const COST_PER_IMAGE_USD = 0.134;
-
 const MAX_RETRIES = 4;
 const RETRY_CODES = new Set([429, 500, 502, 503, 504]);
 
-async function generateScene(prompt, apiKey) {
+export async function generateScene(prompt, apiKey) {
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
@@ -48,7 +44,6 @@ async function generateScene(prompt, apiKey) {
       if (inline?.data) {
         return {
           buffer: Buffer.from(inline.data, "base64"),
-          tokens: json.usageMetadata?.candidatesTokenCount ?? null,
           costUsd: COST_PER_IMAGE_USD,
         };
       }
@@ -57,7 +52,6 @@ async function generateScene(prompt, apiKey) {
   }
 }
 
-/** Vertical alpha gradient used to fade the reflection out. */
 function fadeMask(width, height) {
   return Buffer.from(
     `<svg width="${width}" height="${height}">
@@ -71,7 +65,6 @@ function fadeMask(width, height) {
   );
 }
 
-/** Bounding box of non-transparent pixels, so shadow and reflection sit right. */
 async function alphaBounds(cutout, width, height) {
   const alpha = await sharp(cutout).ensureAlpha().extractChannel(3).raw().toBuffer();
   let top = height, bottom = 0, left = width, right = 0;
@@ -89,7 +82,28 @@ async function alphaBounds(cutout, width, height) {
   return { top, bottom, left, right };
 }
 
-export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
+/**
+ * Reject images that aren't a full car exterior — close-ups of wheels,
+ * interior shots, engine bays, etc. Uses the segmentation bounding box:
+ * a real car exterior fills 10–85% of the frame and spans at least 30%
+ * of the width.
+ */
+function isCarExterior(bounds, width, height) {
+  const bw = bounds.right - bounds.left;
+  const bh = bounds.bottom - bounds.top;
+  const coverage = (bw * bh) / (width * height);
+  return coverage >= 0.10 && coverage <= 0.85 && bw / width >= 0.30 && bh / height >= 0.25;
+}
+
+/**
+ * @param {object} opts
+ * @param {string} opts.sourceUrl    — CDN URL for the source photo
+ * @param {object} opts.scene        — scene config from scenes.ts
+ * @param {Buffer} [opts.sceneBuffer] — pre-loaded scene image (skips Gemini)
+ * @param {string} [opts.apiKey]     — Gemini key (required if no sceneBuffer)
+ * @param {object} [opts.logo]       — optional logo overlay config
+ */
+export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, logo }) {
   // 1. Source photo — the canvas dimensions everything else conforms to.
   const srcRes = await fetch(sourceUrl, { headers: { "user-agent": "EsteemCarsSite/1.0" } });
   if (!srcRes.ok) throw new Error(`source ${srcRes.status}`);
@@ -97,8 +111,7 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
   const { width, height, format } = await sharp(srcBuf).metadata();
   if (!width || !height) throw new Error("could not read source dimensions");
 
-  // 2. Segment. Output is the same dimensions as the input, so the car keeps
-  //    its original position and scale.
+  // 2. Segment.
   console.log(`    seg: ${width}x${height} ${format}`);
   const cutBlob = await removeBackground(sourceUrl);
   const cutout = Buffer.from(await cutBlob.arrayBuffer());
@@ -106,23 +119,38 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
   const cutMeta = await sharp(cutout).metadata();
   if (cutMeta.width !== width || cutMeta.height !== height) {
     throw new Error(
-      `segmentation changed dimensions (${cutMeta.width}x${cutMeta.height} vs ${width}x${height}) — ` +
-        "compositing it would resample the car",
+      `segmentation changed dimensions (${cutMeta.width}x${cutMeta.height} vs ${width}x${height})`,
     );
   }
 
-  // 3. Empty scene, resized to cover the canvas. The scene bends to the photo,
-  //    never the other way round.
-  const generated = await generateScene(scene.prompt, apiKey);
-  const background = await sharp(generated.buffer)
-    .resize(width, height, { fit: "cover", position: "centre" })
-    .toBuffer();
-
+  // 3. Car detection — reject non-exterior images.
   const bounds = await alphaBounds(cutout, width, height);
+  if (!isCarExterior(bounds, width, height)) {
+    const bw = bounds.right - bounds.left;
+    const bh = bounds.bottom - bounds.top;
+    const pct = ((bw * bh) / (width * height) * 100).toFixed(0);
+    return { skipped: true, reason: `subject ${bw}x${bh} (${pct}% of frame)` };
+  }
+
+  // 4. Background — static scene or generated.
+  let background;
+  let costUsd = 0;
+  if (sceneBuffer) {
+    background = await sharp(sceneBuffer)
+      .resize(width, height, { fit: "cover", position: "centre" })
+      .toBuffer();
+  } else {
+    const generated = await generateScene(scene.prompt, apiKey);
+    background = await sharp(generated.buffer)
+      .resize(width, height, { fit: "cover", position: "centre" })
+      .toBuffer();
+    costUsd = generated.costUsd;
+  }
+
   const carWidth = bounds.right - bounds.left;
   const contactY = bounds.bottom;
 
-  // 4. Contact shadow, derived from the real silhouette rather than drawn.
+  // 5. Contact shadow.
   const shadowHeight = Math.max(8, Math.round((bounds.bottom - bounds.top) * 0.14));
   const shadow = await sharp(cutout)
     .extractChannel(3)
@@ -153,7 +181,7 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
     .png()
     .toBuffer();
 
-  // 5. Floor reflection — the car mirrored, faded, and dimmed by floor type.
+  // 6. Floor reflection.
   const reflectionHeight = Math.min(
     Math.round((bounds.bottom - bounds.top) * 0.55),
     Math.max(1, height - contactY),
@@ -176,12 +204,10 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
         .toBuffer(),
       left: 0,
       top: contactY,
-      opacity: scene.floorReflectivity,
     };
   }
 
-  // 6. Composite. Order matters: scene, reflection, shadow, then the untouched
-  //    car last so nothing can draw over it.
+  // 7. Composite: scene → reflection → shadow → car (untouched, on top).
   const layers = [];
   if (reflectionLayer) {
     layers.push({ input: reflectionLayer.input, left: reflectionLayer.left, top: reflectionLayer.top });
@@ -189,8 +215,7 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
   layers.push({ input: shadowLayer, left: 0, top: 0 });
   layers.push({ input: cutout, left: 0, top: 0 });
 
-  // 7. Logo — a fixed, deterministic overlay. Identical on every image, never
-  //    generated. Skipped entirely rather than approximated when unavailable.
+  // 8. Logo overlay.
   if (logo?.buffer) {
     const logoWidth = Math.round(width * (logo.widthRatio ?? 0.16));
     const resized = await sharp(logo.buffer)
@@ -207,15 +232,22 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
     });
   }
 
-  const outBuf = await sharp(background).composite(layers).jpeg({ quality: 88, mozjpeg: true }).toBuffer();
-  const thumbBuf = await sharp(outBuf).resize(640, null, { fit: "inside" }).jpeg({ quality: 82 }).toBuffer();
+  let composite = await sharp(background).composite(layers).jpeg({ quality: 88, mozjpeg: true }).toBuffer();
 
-  return {
-    full: outBuf,
-    thumb: thumbBuf,
-    costUsd: generated.costUsd,
-    tokens: generated.tokens,
-    width,
-    height,
-  };
+  // 9. Bottom-edge cleanup: if the car sits within 15px of the frame
+  // bottom, segmentation often includes a sliver of the original ground.
+  // Crop it off so the scene floor runs clean to the edge.
+  const bottomGap = height - bounds.bottom;
+  if (bottomGap < 15 && bottomGap > 0) {
+    const cropH = height - bottomGap;
+    composite = await sharp(composite)
+      .extract({ left: 0, top: 0, width, height: cropH })
+      .resize(width, height, { fit: "cover", position: "top" })
+      .jpeg({ quality: 88, mozjpeg: true })
+      .toBuffer();
+  }
+
+  const thumbBuf = await sharp(composite).resize(640, null, { fit: "inside" }).jpeg({ quality: 82 }).toBuffer();
+
+  return { full: composite, thumb: thumbBuf, costUsd, width, height };
 }
