@@ -186,6 +186,7 @@ async function processJob(job, index) {
   } catch (e) {
     failed++;
     console.log(`  FAIL ${label.padEnd(44)} ${e.message}`);
+    if (failed <= 2) console.log(e.stack);
   }
 }
 
