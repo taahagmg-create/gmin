@@ -82,12 +82,13 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
   const srcRes = await fetch(sourceUrl, { headers: { "user-agent": "EsteemCarsSite/1.0" } });
   if (!srcRes.ok) throw new Error(`source ${srcRes.status}`);
   const srcBuf = Buffer.from(await srcRes.arrayBuffer());
-  const { width, height } = await sharp(srcBuf).metadata();
+  const { width, height, format } = await sharp(srcBuf).metadata();
   if (!width || !height) throw new Error("could not read source dimensions");
 
   // 2. Segment. Output is the same dimensions as the input, so the car keeps
   //    its original position and scale.
-  const cutBlob = await removeBackground(srcBuf);
+  const mime = format === "jpeg" ? "image/jpeg" : format === "png" ? "image/png" : `image/${format}`;
+  const cutBlob = await removeBackground(new Blob([srcBuf], { type: mime }));
   const cutout = Buffer.from(await cutBlob.arrayBuffer());
 
   const cutMeta = await sharp(cutout).metadata();
