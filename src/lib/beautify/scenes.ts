@@ -87,10 +87,12 @@ export function getScene(id: SceneId): Scene {
  * whole catalogue. Spreads roughly evenly across scenes so 133 vehicles don't
  * all share one backdrop.
  */
+const AUTO_SCENES = SCENES.filter((s) => s.id !== "grey-studio");
+
 export function sceneForVehicle(vehicleId: string): Scene {
   let hash = 0;
   for (let i = 0; i < vehicleId.length; i++) {
     hash = (hash * 31 + vehicleId.charCodeAt(i)) >>> 0;
   }
-  return SCENES[hash % SCENES.length];
+  return AUTO_SCENES[hash % AUTO_SCENES.length];
 }

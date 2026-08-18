@@ -84,15 +84,16 @@ async function alphaBounds(cutout, width, height) {
 
 /**
  * Reject images that aren't a full car exterior — close-ups of wheels,
- * interior shots, engine bays, etc. Uses the segmentation bounding box:
- * a real car exterior fills 10–85% of the frame and spans at least 30%
- * of the width.
+ * interior shots, engine bays, etc. A real car exterior is wider than
+ * tall (AR > 1.2) and spans most of the frame width. Wheels and
+ * steering wheels are roughly circular (AR ~ 1.0) and fail the check.
  */
 function isCarExterior(bounds, width, height) {
   const bw = bounds.right - bounds.left;
   const bh = bounds.bottom - bounds.top;
-  const coverage = (bw * bh) / (width * height);
-  return coverage >= 0.10 && coverage <= 0.85 && bw / width >= 0.30 && bh / height >= 0.25;
+  const ar = bw / bh;
+  const widthRatio = bw / width;
+  return ar >= 1.2 && widthRatio >= 0.50 && bh / height >= 0.25;
 }
 
 /**
