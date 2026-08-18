@@ -87,8 +87,10 @@ export async function beautifyPhoto({ sourceUrl, scene, apiKey, logo }) {
 
   // 2. Segment. Output is the same dimensions as the input, so the car keeps
   //    its original position and scale.
-  console.log(`    src: ${srcBuf.length}B ${format} ${width}x${height}`);
-  const cutBlob = await removeBackground(srcBuf.buffer.slice(srcBuf.byteOffset, srcBuf.byteOffset + srcBuf.byteLength));
+  const mime = format === "jpeg" ? "image/jpeg" : format === "png" ? "image/png" : `image/${format}`;
+  console.log(`    seg input: ${srcBuf.length}B ${mime} ${width}x${height}`);
+  const dataUrl = `data:${mime};base64,${srcBuf.toString("base64")}`;
+  const cutBlob = await removeBackground(dataUrl);
   const cutout = Buffer.from(await cutBlob.arrayBuffer());
 
   const cutMeta = await sharp(cutout).metadata();
