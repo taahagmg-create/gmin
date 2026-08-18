@@ -68,8 +68,8 @@ jobs:
         working-directory: scripts/beautify
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-          # Set once a transparent logo exists in the repo.
           BEAUTIFY_LOGO_PATH: ${{ vars.BEAUTIFY_LOGO_PATH }}
           BEAUTIFY_LOGO_BLEND: ${{ vars.BEAUTIFY_LOGO_BLEND }}
         run: >

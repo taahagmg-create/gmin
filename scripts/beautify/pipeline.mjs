@@ -12,7 +12,7 @@ import { removeBackground } from "@imgly/background-removal-node";
  * this whole pipeline exists to keep.
  */
 
-const MODEL = "gemini-3-pro-image";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3-pro-image";
 /** Quoted price for a 1K/2K image. Recorded per image so spend is observed. */
 const COST_PER_IMAGE_USD = 0.134;
 
