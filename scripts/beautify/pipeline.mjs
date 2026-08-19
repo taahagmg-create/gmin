@@ -165,7 +165,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
   const carH = bounds.bottom - bounds.top;
 
   const bottomGap = height - bounds.bottom;
-  const trimBottom = bottomGap < 12 ? Math.min(12 - bottomGap, Math.floor(carH * 0.05)) : 0;
+  const trimBottom = bottomGap < 5 ? Math.min(5 - bottomGap, Math.floor(carH * 0.02)) : 0;
   const cleanCarH = carH - trimBottom;
 
   const carCrop = await sharp(cutout)
@@ -174,7 +174,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
     .toBuffer();
 
   const targetLeft = Math.max(0, Math.round((width - carW) / 2));
-  const targetBottom = Math.round(height * 0.68);
+  const targetBottom = Math.round(height * 0.72);
   const targetTop = Math.max(0, targetBottom - cleanCarH);
   const actualBottom = targetTop + cleanCarH;
 
@@ -265,7 +265,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
   const tH = Math.round(tW * 0.13);
   const turntable = await sharp(turntableSvg(tW, tH)).png().toBuffer();
   const turntableLeft = Math.max(0, Math.round((width - tW) / 2));
-  const turntableTop = Math.max(0, actualBottom - Math.round(tH * 0.42));
+  const turntableTop = Math.max(0, actualBottom - Math.round(tH * 0.58));
 
   // 9. Composite: scene → reflection → turntable → shadow → centred car.
   const layers = [];
