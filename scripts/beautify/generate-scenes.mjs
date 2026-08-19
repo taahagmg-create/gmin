@@ -4,16 +4,17 @@ import sharp from "sharp";
 import { generateScene } from "./pipeline.mjs";
 
 /**
- * One-time generator: creates the 3 static background scenes used by the
+ * One-time generator: creates the static dark-showroom background used by the
  * beautification pipeline. Run once, commit the output, and every subsequent
- * pipeline run uses the same backgrounds — perfect consistency, zero API cost.
+ * pipeline run uses the same background — perfect consistency, zero API cost.
  *
  * Usage:  node --experimental-strip-types --import ./register.mjs generate-scenes.mjs
  * Needs:  GEMINI_API_KEY
- * Cost:   ~$0.40 (3 images)
+ * Cost:   ~$0.13 (1 image)
  */
 
-const { SCENES } = await import("@/lib/beautify/scenes.ts");
+const { sceneForVehicle } = await import("@/lib/beautify/scenes.ts");
+const SCENES = [sceneForVehicle("_")];
 
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {

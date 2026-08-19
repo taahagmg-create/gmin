@@ -36,16 +36,21 @@ const COMMON =
 export const SCENES: Scene[] = [
   {
     id: "dark-showroom",
-    label: "Signature dark showroom",
+    label: "Premium dark showroom",
     lightDirection: "top",
-    floorReflectivity: 0.34,
-    shadowStrength: 0.55,
+    floorReflectivity: 0.60,
+    shadowStrength: 0.70,
     prompt:
-      "An empty premium car showroom interior. Dark, glossy, highly reflective polished floor " +
-      "spanning the full foreground. Dramatic directional overhead lighting with soft visible " +
-      "light beams descending through the space. Subtle dark gradient backdrop wall, charcoal " +
-      "fading to black. Faint warm rim highlights along the edges of the room. " +
-      COMMON,
+      "Empty premium automotive showroom interior, professional photograph at eye level. " +
+      "Dark charcoal-grey vertical wall panels as backdrop, subtle panel seams visible. " +
+      "High ceiling with recessed linear LED strip lights and focused spot downlights " +
+      "casting dramatic pools of warm white light down onto the floor. " +
+      "Highly polished glossy black floor filling the entire foreground — " +
+      "mirror-like reflective surface showing reflections of the ceiling lights. " +
+      "Centre of the floor is brightly illuminated, room edges recede into deep shadow. " +
+      "Horizon roughly one third from the bottom, generous empty floor in the foreground. " +
+      "Photorealistic, full-frame camera, 35mm lens. " +
+      "No vehicles, no people, no text, no signage, no logos, no watermarks.",
   },
   {
     id: "grey-studio",
@@ -87,12 +92,6 @@ export function getScene(id: SceneId): Scene {
  * whole catalogue. Spreads roughly evenly across scenes so 133 vehicles don't
  * all share one backdrop.
  */
-const AUTO_SCENES = SCENES.filter((s) => s.id !== "grey-studio");
-
-export function sceneForVehicle(vehicleId: string): Scene {
-  let hash = 0;
-  for (let i = 0; i < vehicleId.length; i++) {
-    hash = (hash * 31 + vehicleId.charCodeAt(i)) >>> 0;
-  }
-  return AUTO_SCENES[hash % AUTO_SCENES.length];
+export function sceneForVehicle(_vehicleId: string): Scene {
+  return SCENES[0];
 }

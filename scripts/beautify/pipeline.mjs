@@ -2,12 +2,12 @@ import sharp from "sharp";
 import { removeBackground } from "@imgly/background-removal-node";
 
 /**
- * Beautify one photo: segment the car, composite onto a scene.
+ * Beautify one photo: segment the car, centre it on a showroom stage, composite.
  *
  * THE GUARANTEE: the car's pixels are never resized, resampled, colour-managed
- * or passed through the image model. The canvas is the source photo's exact
- * dimensions, the generated scene is resized to fit *that*, and the cutout is
- * composited at (0,0) at native size.
+ * or passed through the image model. The cutout is cropped to its bounding box
+ * and repositioned (centred horizontally, anchored at 68 % height) — pixel
+ * values are unchanged, only placement on the canvas differs.
  */
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-3-pro-image";
@@ -56,11 +56,38 @@ function fadeMask(width, height) {
   return Buffer.from(
     `<svg width="${width}" height="${height}">
        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-         <stop offset="0%" stop-color="#fff" stop-opacity="0.45"/>
-         <stop offset="60%" stop-color="#fff" stop-opacity="0.06"/>
+         <stop offset="0%" stop-color="#fff" stop-opacity="0.55"/>
+         <stop offset="50%" stop-color="#fff" stop-opacity="0.12"/>
          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
        </linearGradient></defs>
        <rect width="${width}" height="${height}" fill="url(#g)"/>
+     </svg>`,
+  );
+}
+
+function turntableSvg(w, h) {
+  const cx = Math.round(w / 2);
+  const surfY = Math.round(h * 0.42);
+  const surfRY = Math.round(h * 0.40);
+  const edgeY = Math.round(h * 0.58);
+  const edgeRY = Math.round(h * 0.42);
+  return Buffer.from(
+    `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
+       <defs>
+         <radialGradient id="wood" cx="50%" cy="38%">
+           <stop offset="0%" stop-color="#A89070"/>
+           <stop offset="50%" stop-color="#8B7355"/>
+           <stop offset="100%" stop-color="#5A4630"/>
+         </radialGradient>
+         <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+           <stop offset="0%" stop-color="#7D6B50"/>
+           <stop offset="100%" stop-color="#3D3020"/>
+         </linearGradient>
+       </defs>
+       <ellipse cx="${cx}" cy="${edgeY}" rx="${cx}" ry="${edgeRY}" fill="url(#edge)"/>
+       <ellipse cx="${cx}" cy="${surfY}" rx="${cx}" ry="${surfRY}" fill="url(#wood)"/>
+       <ellipse cx="${cx}" cy="${surfY}" rx="${cx - 2}" ry="${surfRY - 2}"
+                fill="none" stroke="#C4B090" stroke-width="1" opacity="0.18"/>
      </svg>`,
   );
 }
@@ -133,7 +160,32 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
     return { skipped: true, reason: `subject ${bw}x${bh} (${pct}% of frame)` };
   }
 
-  // 4. Background — static scene or generated.
+  // 4. Reposition — centre the car horizontally, anchor bottom at 68 % of frame.
+  const carW = bounds.right - bounds.left;
+  const carH = bounds.bottom - bounds.top;
+
+  const bottomGap = height - bounds.bottom;
+  const trimBottom = bottomGap < 12 ? Math.min(12 - bottomGap, Math.floor(carH * 0.05)) : 0;
+  const cleanCarH = carH - trimBottom;
+
+  const carCrop = await sharp(cutout)
+    .extract({ left: bounds.left, top: bounds.top, width: carW, height: cleanCarH })
+    .png()
+    .toBuffer();
+
+  const targetLeft = Math.max(0, Math.round((width - carW) / 2));
+  const targetBottom = Math.round(height * 0.68);
+  const targetTop = Math.max(0, targetBottom - cleanCarH);
+  const actualBottom = targetTop + cleanCarH;
+
+  const centeredCutout = await sharp({
+    create: { width, height, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+  })
+    .composite([{ input: carCrop, left: targetLeft, top: targetTop }])
+    .png()
+    .toBuffer();
+
+  // 5. Background — static scene or generated.
   let background;
   let costUsd = 0;
   if (sceneBuffer) {
@@ -148,16 +200,17 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
     costUsd = generated.costUsd;
   }
 
-  const carWidth = bounds.right - bounds.left;
-  const contactY = bounds.bottom;
-
-  // 5. Contact shadow.
-  const shadowHeight = Math.max(8, Math.round((bounds.bottom - bounds.top) * 0.14));
-  const shadow = await sharp(cutout)
+  // 6. Contact shadow — positioned under the centred car.
+  const shadowHeight = Math.max(8, Math.round(cleanCarH * 0.14));
+  const shadowW = Math.round(carW * 1.04);
+  const shadow = await sharp(carCrop)
     .extractChannel(3)
-    .resize(Math.round(carWidth * 1.04), shadowHeight, { fit: "fill" })
-    .blur(Math.max(6, Math.round(carWidth * 0.02)))
+    .resize(shadowW, shadowHeight, { fit: "fill" })
+    .blur(Math.max(6, Math.round(carW * 0.02)))
     .toBuffer();
+
+  const shadowLeft = Math.max(0, targetLeft - Math.round(carW * 0.02));
+  const shadowTop = Math.min(height - shadowHeight, actualBottom - Math.round(shadowHeight * 0.55));
 
   const shadowLayer = await sharp({
     create: { width, height, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
@@ -166,7 +219,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
       {
         input: await sharp({
           create: {
-            width: Math.round(carWidth * 1.04),
+            width: shadowW,
             height: shadowHeight,
             channels: 4,
             background: { r: 0, g: 0, b: 0, alpha: scene.shadowStrength },
@@ -175,48 +228,55 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
           .composite([{ input: shadow, blend: "dest-in" }])
           .png()
           .toBuffer(),
-        left: Math.max(0, bounds.left - Math.round(carWidth * 0.02)),
-        top: Math.min(height - shadowHeight, contactY - Math.round(shadowHeight * 0.55)),
+        left: shadowLeft,
+        top: shadowTop,
       },
     ])
     .png()
     .toBuffer();
 
-  // 6. Floor reflection.
-  const reflectionHeight = Math.min(
-    Math.round((bounds.bottom - bounds.top) * 0.55),
-    Math.max(1, height - contactY),
-  );
+  // 7. Floor reflection — flipped car crop placed below the centred car.
+  const reflectionMaxH = Math.round(cleanCarH * 0.55);
+  const spaceBelow = Math.max(1, height - actualBottom);
+  const reflectionHeight = Math.min(reflectionMaxH, spaceBelow);
 
   let reflectionLayer = null;
   if (reflectionHeight > 12 && scene.floorReflectivity > 0.02) {
-    const mirrored = await sharp(cutout)
+    const mirrored = await sharp(carCrop)
       .flip()
-      .resize(width, reflectionHeight, { fit: "cover", position: "top" })
-      .composite([{ input: fadeMask(width, reflectionHeight), blend: "dest-in" }])
+      .resize(carW, reflectionHeight, { fit: "cover", position: "top" })
+      .composite([{ input: fadeMask(carW, reflectionHeight), blend: "dest-in" }])
       .png()
       .toBuffer();
 
     reflectionLayer = {
       input: await sharp(mirrored)
         .ensureAlpha()
-        .modulate({ brightness: 0.72 })
+        .modulate({ brightness: 0.75 })
         .png()
         .toBuffer(),
-      left: 0,
-      top: contactY,
+      left: targetLeft,
+      top: actualBottom,
     };
   }
 
-  // 7. Composite: scene → reflection → shadow → car (untouched, on top).
+  // 8. Turntable platform — elliptical wooden pad beneath the car.
+  const tW = Math.round(carW * 1.15);
+  const tH = Math.round(tW * 0.13);
+  const turntable = await sharp(turntableSvg(tW, tH)).png().toBuffer();
+  const turntableLeft = Math.max(0, Math.round((width - tW) / 2));
+  const turntableTop = Math.max(0, actualBottom - Math.round(tH * 0.42));
+
+  // 9. Composite: scene → reflection → turntable → shadow → centred car.
   const layers = [];
   if (reflectionLayer) {
     layers.push({ input: reflectionLayer.input, left: reflectionLayer.left, top: reflectionLayer.top });
   }
+  layers.push({ input: turntable, left: turntableLeft, top: turntableTop });
   layers.push({ input: shadowLayer, left: 0, top: 0 });
-  layers.push({ input: cutout, left: 0, top: 0 });
+  layers.push({ input: centeredCutout, left: 0, top: 0 });
 
-  // 8. Logo overlay.
+  // 10. Logo overlay.
   if (logo?.buffer) {
     const logoWidth = Math.round(width * (logo.widthRatio ?? 0.16));
     const resized = await sharp(logo.buffer)
@@ -233,21 +293,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
     });
   }
 
-  let composite = await sharp(background).composite(layers).jpeg({ quality: 88, mozjpeg: true }).toBuffer();
-
-  // 9. Bottom-edge cleanup: if the car sits within 15px of the frame
-  // bottom, segmentation often includes a sliver of the original ground.
-  // Crop it off so the scene floor runs clean to the edge.
-  const bottomGap = height - bounds.bottom;
-  if (bottomGap < 15 && bottomGap > 0) {
-    const cropH = height - bottomGap;
-    composite = await sharp(composite)
-      .extract({ left: 0, top: 0, width, height: cropH })
-      .resize(width, height, { fit: "cover", position: "top" })
-      .jpeg({ quality: 88, mozjpeg: true })
-      .toBuffer();
-  }
-
+  const composite = await sharp(background).composite(layers).jpeg({ quality: 88, mozjpeg: true }).toBuffer();
   const thumbBuf = await sharp(composite).resize(640, null, { fit: "inside" }).jpeg({ quality: 82 }).toBuffer();
 
   return { full: composite, thumb: thumbBuf, costUsd, width, height };
