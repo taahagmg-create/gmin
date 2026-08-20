@@ -265,7 +265,7 @@ export async function beautifyPhoto({ sourceUrl, scene, sceneBuffer, apiKey, log
   const tH = Math.round(tW * 0.13);
   const turntable = await sharp(turntableSvg(tW, tH)).png().toBuffer();
   const turntableLeft = Math.max(0, Math.round((width - tW) / 2));
-  const turntableTop = Math.max(0, actualBottom - Math.round(tH * 0.58));
+  const turntableTop = Math.max(0, actualBottom - Math.round(tH * 0.75));
 
   // 9. Composite: scene → reflection → turntable → shadow → centred car.
   const layers = [];
