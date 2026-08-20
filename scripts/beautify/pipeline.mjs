@@ -63,26 +63,41 @@ export async function generateScene(prompt, apiKey) {
 
 async function generatePlacement(base64Jpeg, apiKey) {
   for (let attempt = 0; ; attempt++) {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          contents: [{
-            parts: [
-              { inline_data: { mime_type: "image/jpeg", data: base64Jpeg } },
-              { text: PLACEMENT_PROMPT },
-            ],
-          }],
-        }),
-      },
-    );
+    let res;
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 180_000);
+      res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          signal: controller.signal,
+          body: JSON.stringify({
+            contents: [{
+              parts: [
+                { inline_data: { mime_type: "image/jpeg", data: base64Jpeg } },
+                { text: PLACEMENT_PROMPT },
+              ],
+            }],
+          }),
+        },
+      );
+      clearTimeout(timer);
+    } catch (err) {
+      if (attempt < MAX_RETRIES) {
+        const delay = Math.min(2 ** attempt * 3000, 30000);
+        console.log(`    network error, retry ${attempt + 1}/${MAX_RETRIES} in ${(delay / 1000).toFixed(0)}s… (${err.message})`);
+        await new Promise((r) => setTimeout(r, delay));
+        continue;
+      }
+      throw err;
+    }
 
     if (!res.ok) {
       const body = (await res.text()).slice(0, 300);
       if (RETRY_CODES.has(res.status) && attempt < MAX_RETRIES) {
-        const delay = Math.min(2 ** attempt * 2000, 30000);
+        const delay = Math.min(2 ** attempt * 3000, 30000);
         console.log(`    gemini ${res.status}, retry ${attempt + 1}/${MAX_RETRIES} in ${(delay / 1000).toFixed(0)}s…`);
         await new Promise((r) => setTimeout(r, delay));
         continue;

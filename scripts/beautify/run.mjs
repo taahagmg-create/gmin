@@ -25,7 +25,7 @@ const ONLY_NEW = flag("only-new");
 
 const MANIFEST_PATH = path.resolve(import.meta.dirname, "../../src/data/beautify-manifest.json");
 const SCENES_DIR = path.resolve(import.meta.dirname, "scenes");
-const CONCURRENCY = 2;
+const CONCURRENCY = 1;
 
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey && !DRY_RUN) {
