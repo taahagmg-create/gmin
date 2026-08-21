@@ -87,6 +87,29 @@ async function upload(buffer, key) {
   return res.url;
 }
 
+async function preflightBlobToken() {
+  const { put, del } = await import("@vercel/blob");
+  const probe = Buffer.from("probe");
+  const res = await put("_beautify-probe.txt", probe, {
+    access: "public",
+    contentType: "text/plain",
+    addRandomSuffix: false,
+  });
+  await del(res.url);
+}
+
+if (UPLOAD) {
+  console.log("preflight: testing Blob token…");
+  try {
+    await preflightBlobToken();
+    console.log("  blob token ok");
+  } catch (e) {
+    console.error(`  blob token FAILED: ${e.message}`);
+    console.error("Fix the BLOB_READ_WRITE_TOKEN secret before re-running.");
+    process.exit(1);
+  }
+}
+
 const manifest = loadManifest();
 const logo = loadLogo();
 const staticScenes = loadStaticScenes();
