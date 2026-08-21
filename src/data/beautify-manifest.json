@@ -1,6 +1,1619 @@
 {
   "version": 1,
-  "updatedAt": "1970-01-01T00:00:00.000Z",
-  "totalCostUsd": 0,
-  "vehicles": {}
+  "updatedAt": "2026-08-21T09:28:22.625Z",
+  "totalCostUsd": 20.77,
+  "vehicles": {
+    "6764": {
+      "vehicleId": "6764",
+      "slug": "6764-2019-bmw-m5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f7db3670-10c9-40df-ac8c-ef58a8633226.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:18:00.804Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/71c344d3-15d3-4304-ada8-475a9431509c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:18:45.470Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1e39f469-1029-487d-adb5-9e0de13a1cb5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6764-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:27:48.648Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "6805": {
+      "vehicleId": "6805",
+      "slug": "6805-2014-honda-accord-hybrid",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/8cf71665-36a7-48eb-b095-78fcc7741b36.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6805-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6805-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:08:13.793Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/22ceb240-a8e5-4a61-8c26-58ffabf71fb3.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6805-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/6805-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:08:28.885Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "7300": {
+      "vehicleId": "7300",
+      "slug": "7300-2014-audi-a6",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/520db705-7290-444a-8585-dfc372873048.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/7300-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/7300-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:08:47.003Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0ec8dab7-121e-44c9-865d-7a611d642bd5.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/7300-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/7300-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:08:57.656Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8448": {
+      "vehicleId": "8448",
+      "slug": "8448-2016-audi-a4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/20ff2966-64d4-4cd9-84d7-999f5515b361.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:41:39.875Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f99a434f-352a-47c4-878b-eacab1527dc5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:41:48.709Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/e33ec3e0-1ece-4a6e-98f0-af7488ed8a9e.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8448-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:42:07.159Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8459": {
+      "vehicleId": "8459",
+      "slug": "8459-2014-audi-q5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/de64f692-a0f0-480b-a812-16033bdac1b1.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8459-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8459-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:09:29.437Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/70de7b4f-1321-4132-a67a-260474565d36.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8459-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8459-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:09:37.345Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8473": {
+      "vehicleId": "8473",
+      "slug": "8473-2017-mazda-cx-5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/935fc854-7a5b-48f6-84e3-e7bcb8db55e7.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:28:27.452Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/adc755f9-224a-4cff-9ec3-52487a405c32.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:31:07.337Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/62570e0d-9fed-4640-b1a8-d3a9a06f6782.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8473-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:31:15.498Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8474": {
+      "vehicleId": "8474",
+      "slug": "8474-2018-suzuki-swift",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/08aebd96-7213-48c8-981c-54cef922a28f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:22:17.923Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/75c3a8e1-66ac-4b57-b4f4-f5de125cfe08.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:22:49.772Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/a9adebd2-bfa9-4764-b723-b00a2026b17e.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8474-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:23:38.954Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8500": {
+      "vehicleId": "8500",
+      "slug": "8500-2015-audi-q7",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ad709859-3f3f-4bce-9fa5-1f5e62057c82.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8500-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8500-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:47:28.945Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8504": {
+      "vehicleId": "8504",
+      "slug": "8504-2014-honda-vezel",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/3f35ceea-f954-41ab-bb2e-f4bd2f528cad.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:09:53.316Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d96ff3cb-fd70-40aa-848d-ee8de8455195.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:10:02.136Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/992cc2df-0594-4fcb-b80b-6ab1852ab0bb.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8504-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:10:17.650Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8603": {
+      "vehicleId": "8603",
+      "slug": "8603-2014-bmw-x1",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d443e247-611e-4623-a9c2-64fa6e4d0784.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8603-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8603-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:10:33.157Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/21fd9d7e-303e-4cd8-b952-946157364db7.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8603-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8603-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:10:49.512Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8606": {
+      "vehicleId": "8606",
+      "slug": "8606-2014-bmw-x1",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/11795a3f-09c5-4a44-bf6d-3954b69935b6.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8606-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8606-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:11:02.252Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/dd166a5a-964a-4a01-9f8f-bfc8261469c4.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8606-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8606-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:11:19.440Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8725": {
+      "vehicleId": "8725",
+      "slug": "8725-2014-nissan-skyline-4d",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/a23ec3ef-ec91-4639-92bc-0eacbdacb701.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:11:27.156Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/83585ba1-bf6b-42df-a7d5-d723bafe59ad.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:11:44.372Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6f490ca3-f6a8-4c7e-8128-b4e31fafca1d.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8725-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:11:52.488Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8919": {
+      "vehicleId": "8919",
+      "slug": "8919-2014-subaru-levorg-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/436aedac-138f-4410-acc8-ce6376c18273.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8919-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8919-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:12:36.032Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8961": {
+      "vehicleId": "8961",
+      "slug": "8961-2014-bmw-x3-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d30c61fb-51fa-45e0-beae-874650d4bbc0.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8961-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8961-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:12:09.088Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5e3a2903-3016-4602-b19c-c290e2232fc6.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8961-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8961-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:12:21.746Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "8988": {
+      "vehicleId": "8988",
+      "slug": "8988-2015-mercedes-benz-e350",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/04b0d471-4c7b-435f-9cd1-f59f06ad6d39.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:47:37.423Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/c8698edd-8fec-4ef9-bda4-cc73983d4a6c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:47:59.646Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/246869db-a733-44c9-8347-7dc3b9ff65c5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/8988-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:48:09.205Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9067": {
+      "vehicleId": "9067",
+      "slug": "9067-2016-holden-barina",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/250dbd9b-0d98-4d8c-8ecf-3b7eac3174c5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9067-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9067-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:42:24.568Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/67c17455-4f75-4f56-bf17-da9d7537033f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9067-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9067-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:42:54.966Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9122": {
+      "vehicleId": "9122",
+      "slug": "9122-2016-mitsubishi-outlander",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d964f0ac-78aa-433e-a6cc-14e76c21d1b9.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9122-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9122-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:43:14.739Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/3ef33b8e-5813-404f-9918-4c78a81a2bed.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9122-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9122-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:43:28.272Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9131": {
+      "vehicleId": "9131",
+      "slug": "9131-2015-bmw-1-series",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/aeffbb77-841e-473b-9991-29269cfd52e5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:48:26.865Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/143dec6b-ef75-47ec-bd7c-1445cbe6efa1.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:48:35.912Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/9d0dc36e-521c-4259-a366-f99ea423d098.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9131-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:48:56.457Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9230": {
+      "vehicleId": "9230",
+      "slug": "9230-2016-mitsubishi-outlander",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d36c974b-150b-4e6a-95ba-a9fa114cae1a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9230-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9230-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:43:44.725Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/938b4fcb-e907-432d-b117-2adfa440c9df.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9230-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9230-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:43:55.661Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9242": {
+      "vehicleId": "9242",
+      "slug": "9242-2015-mercedes-benz-c200",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0ef8c012-010f-41a7-8bdf-c4d95df2cdd5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9242-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9242-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:49:20.168Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9536": {
+      "vehicleId": "9536",
+      "slug": "9536-2017-audi-a4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/9874cbf6-883f-45e1-9300-f4e4953af7e6.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:31:36.823Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/52b8a37b-b21e-450a-9310-0fc158d87060.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:31:46.399Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/89784fce-01d1-4b99-ad72-dd8ed87583f7.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9536-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:32:10.771Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9546": {
+      "vehicleId": "9546",
+      "slug": "9546-2016-mazda-cx-5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6c29054a-9f8a-488b-85c8-211716c0bd88.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:44:11.461Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1dc4551e-ca52-4477-b340-9488349fab53.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:44:22.178Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/b3d64476-953b-4d91-b03b-6df71fd7726a.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9546-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:44:38.123Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9547": {
+      "vehicleId": "9547",
+      "slug": "9547-2017-nissan-x-trail-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/4f140743-b77d-483f-b860-02b3f3c401e6.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9547-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9547-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:32:36.501Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2fa66e06-24e3-4bdd-b982-55e22c58448e.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9547-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9547-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:32:45.354Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9549": {
+      "vehicleId": "9549",
+      "slug": "9549-2015-honda-vezel",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6238fa25-2ff5-4f05-8403-73fc739f9d5e.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:49:28.122Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ff18e343-f354-44c1-9a7b-704fa191b187.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:49:47.685Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/194c7193-c62c-49ca-94c8-700a69a208c2.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9549-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:49:57.020Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9575": {
+      "vehicleId": "9575",
+      "slug": "9575-2016-land-rover-discovery-sport",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/34f05ce9-8017-4a2d-bdee-7e054b0999c3.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9575-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9575-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:44:51.371Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f87b41f1-3d6b-43b1-86c8-a6034b821edc.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9575-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9575-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:45:10.255Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9593": {
+      "vehicleId": "9593",
+      "slug": "9593-2017-mazda-cx-5-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/38df7dbd-a97a-4044-a960-ca61145c2ba3.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9593-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9593-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:33:04.474Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/29ba0c25-6f73-48bf-bbdb-c70e35157209.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9593-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9593-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:34:31.311Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9594": {
+      "vehicleId": "9594",
+      "slug": "9594-2020-mazda-cx-5-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d5fbb17d-427f-4c93-9797-107c0fbfbd9c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9594-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9594-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:06:38.126Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/35cf7e9e-2d46-4db2-bd8e-555caaf0915a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9594-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9594-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:11:20.565Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9612": {
+      "vehicleId": "9612",
+      "slug": "9612-2015-honda-grace",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/be044bbb-08bd-4d03-bbe6-32a2f1c5535f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:50:17.061Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/e216017c-52db-407d-b8b8-58ad369ec35a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:50:25.889Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/c8518550-76c4-4600-8060-36ab6b57d72e.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9612-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:50:59.187Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9616": {
+      "vehicleId": "9616",
+      "slug": "9616-2015-toyota-aqua",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/4ab83ddc-6800-409e-a373-6bb7604a19a7.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:50:59.693Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/720f3cdf-9c35-4663-8ebf-67dcf66fc0ef.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:51:31.872Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1586b315-cdf7-4f15-a9a6-f93b8548ab1b.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9616-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:52:10.673Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9617": {
+      "vehicleId": "9617",
+      "slug": "9617-2016-porsche-macan-gts",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5fa8bf3c-10a8-4c9f-af0e-a02c37a66a5a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:45:17.935Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d4594fd8-c44b-40dc-b2ab-c61ecd4c99a4.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:45:37.769Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7c50972f-073e-4631-ba8a-77c7c373e493.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9617-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:45:49.892Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9619": {
+      "vehicleId": "9619",
+      "slug": "9619-2017-toyota-c-hr",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/b069b662-1c59-4833-9688-498909fcdc32.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:35:14.669Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0c4507f9-fecd-4a24-8044-73387f8fa110.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:35:38.451Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/59f00ee9-a818-4959-b588-b480ca4588bb.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9619-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:35:48.167Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9621": {
+      "vehicleId": "9621",
+      "slug": "9621-2015-subaru-legacy-b4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7784d5b1-7ec3-4bb5-97e2-e083de919b83.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9621-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9621-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:52:50.454Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/c14b73be-ce5e-4510-8e16-5de5c7f6ac34.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9621-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9621-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:53:08.624Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9626": {
+      "vehicleId": "9626",
+      "slug": "9626-2015-mazda-demio",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0d17e3c9-9764-44e5-9703-921a0ac0e8f0.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9626-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9626-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:53:26.110Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/a0a5cb00-510f-49d5-a5cf-37ad9e0ab756.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9626-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9626-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:53:44.202Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9700": {
+      "vehicleId": "9700",
+      "slug": "9700-2017-subaru-impreza-g4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d34624d9-c311-4de0-b585-29f03fd8f593.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:36:54.642Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/fa9fc958-afb9-4cef-b9b9-b0b4edf8331a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:37:32.049Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/db04ac79-113f-4571-8e77-0ae95d68c661.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9700-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:38:33.347Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9743": {
+      "vehicleId": "9743",
+      "slug": "9743-2015-bmw-116i",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1e4fb6da-0891-44cd-a6b4-8a0c47fe8a4c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:53:52.576Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/b36f7c5d-3c17-4a03-a614-518c2ee7651f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:54:15.149Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f3bb765e-7c79-4ef3-bf69-da2119cfbafa.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9743-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:54:35.771Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9766": {
+      "vehicleId": "9766",
+      "slug": "9766-2016-suzuki-ignis",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/8a978bca-12bc-45bc-a769-efe20ca1140e.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9766-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9766-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:46:04.350Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9813": {
+      "vehicleId": "9813",
+      "slug": "9813-2015-ford-transit",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/84027040-96a0-4588-a324-c3d554af0804.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9813-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9813-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:54:53.624Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9836": {
+      "vehicleId": "9836",
+      "slug": "9836-2015-bmw-435i",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7fd27478-337b-43b7-a7f0-4122858c82ce.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:55:02.272Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2372fe59-13da-4e68-b131-cf965824a35f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:55:17.705Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/dcee10ed-4172-4d9f-8f5a-c6983ef8f7f4.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9836-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:55:31.697Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9891": {
+      "vehicleId": "9891",
+      "slug": "9891-2016-mercedes-benz-e250-amg",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2ad0bd67-12da-449c-979a-e436458fb736.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:46:22.901Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/095f702e-ac60-4257-b2f1-0984d65fc2bd.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:46:31.797Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5eccb7e8-d16d-42ee-8343-0b3f6737cc75.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9891-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:46:48.948Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9905": {
+      "vehicleId": "9905",
+      "slug": "9905-2021-toyota-yaris",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/560856c2-afee-4034-9aec-e7ec92cd1fc0.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:03:20.208Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/cf3ba43f-d742-473f-8ca6-541159345861.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:04:38.754Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ad284028-a724-4201-82f4-c821e564c61c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9905-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:04:50.965Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9977": {
+      "vehicleId": "9977",
+      "slug": "9977-2017-land-rover-range-rover-evoque-4wd",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2740cfc6-8572-42b6-a93c-07ce6b6c091a.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:38:41.447Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/86f170b2-c13a-4ad0-96d2-d530a0f28b93.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:39:19.540Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/a8aca67c-74f8-4766-a21c-69ad132fd447.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9977-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:40:46.372Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9981": {
+      "vehicleId": "9981",
+      "slug": "9981-2015-land-rover-range-rover",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/82154c8d-d391-4a7f-aa6c-2c4bef1bb8d6.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9981-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9981-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:56:12.508Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/9530ef18-1112-4b0f-92af-6768d908991e.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9981-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9981-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:56:23.371Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9984": {
+      "vehicleId": "9984",
+      "slug": "9984-2015-bmw-420i-coupe-luxury",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f937cbd9-43f9-48b3-8ba6-40f1cd69fe91.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:56:59.763Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/e1fa07af-444c-41ce-86f7-8a94a46e6960.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:57:25.451Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/3d557344-3af5-48a6-b675-7676c8dbbd99.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9984-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:57:33.383Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "9988": {
+      "vehicleId": "9988",
+      "slug": "9988-2018-nissan-navara",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ced2b70b-8c3b-40ef-a0d7-88dc3ba5d01e.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9988-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9988-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:24:04.996Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/961fad38-bafb-444b-9b9f-d9bfbf111c49.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9988-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/9988-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:24:36.703Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10010": {
+      "vehicleId": "10010",
+      "slug": "10010-2017-audi-a4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7e41de5a-6ff3-4996-ae46-28c4b853b71c.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:40:38.458Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/36085e6d-6987-4098-b624-3ee886a0b4e0.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:41:10.988Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/610ca685-7a57-4d23-aa29-b02203bb8375.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10010-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:41:18.490Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10023": {
+      "vehicleId": "10023",
+      "slug": "10023-2015-mercedes-benz-benz-c-class",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/357f0e84-ed83-4213-8cbb-b93105cbf1b5.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:58:42.049Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/bf9cbe37-fa2f-45e1-9f33-22cefbee118c.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:58:49.440Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/9f8589ec-671c-40f1-8e4f-bb37bde13e03.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10023-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:59:09.035Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10025": {
+      "vehicleId": "10025",
+      "slug": "10025-2015-toyota-aqua",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5fe810bf-45ec-4ac9-b5b5-73e657a1a0b8.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:57:53.425Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/46b0a5b3-9bdf-4b8d-ad51-ad3f7a3930b6.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:58:02.179Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ec5797b5-2b80-45a0-943a-8108a1afdae7.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10025-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:58:20.342Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10032": {
+      "vehicleId": "10032",
+      "slug": "10032-2016-mercedes-benz-c200",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0dd03c46-e771-4a01-8024-2e46cec3d20f.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10032-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10032-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:47:07.986Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10065": {
+      "vehicleId": "10065",
+      "slug": "10065-2015-audi-a7",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/0d9d8898-c4a3-47d5-be05-e8449e6412d9.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:59:17.355Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d06c4b72-d385-49db-b2f5-e343107671ed.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:59:35.175Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/89265807-a3b4-46c3-87be-6f12a34cee4c.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10065-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:59:42.658Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10066": {
+      "vehicleId": "10066",
+      "slug": "10066-2021-toyota-yaris",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/eb7b062e-17e8-4d31-af2f-c6bff699042b.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:05:03.389Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/934714a9-5ff4-4cb4-8752-cef99c9c81ba.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:05:45.436Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1038c097-991d-4b9a-988a-b646ec7a378f.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10066-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:06:37.569Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10070": {
+      "vehicleId": "10070",
+      "slug": "10070-2015-mazda-axela",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/83ca2e63-9168-40ea-9c0d-04ff1cfb4159.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:01:00.714Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f75bdd03-e4a2-4474-8092-420aed5a3195.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:01:15.419Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/b0c1f13e-6469-4ce3-957a-0280c4a6bba7.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10070-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:01:30.911Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10074": {
+      "vehicleId": "10074",
+      "slug": "10074-2015-audi-a4",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6adf05a4-ad40-41aa-81d2-da088062f422.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:00:21.670Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5b964489-6513-4559-8a4c-715214227f43.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:00:29.442Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/3c0bbf86-bf22-48cb-89b3-105e5221cc35.JPEG",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10074-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:00:48.626Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10078": {
+      "vehicleId": "10078",
+      "slug": "10078-2015-mercedes-benz-cla-250",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6e7473ea-d64d-488f-854c-46e3c6444e70.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:02:04.033Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f567d431-9240-4a5f-87fc-9beb75b881f4.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:02:04.416Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/75248eb9-33fd-41da-8ccc-d38124a54082.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10078-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:02:59.902Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10080": {
+      "vehicleId": "10080",
+      "slug": "10080-2015-bmw-320i-m-sports-gt",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/fb0479c2-02cf-4022-975a-0a402ce5234c.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:02:35.797Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2c8a9e21-2a2b-4bff-a68b-5632f2f88e05.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:03:10.249Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d1e99dde-882d-4bb8-9214-44e0ad5cdd26.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10080-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:03:27.510Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10081": {
+      "vehicleId": "10081",
+      "slug": "10081-2015-mercedes-benz-c200",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/42cbb7b2-3a5c-477c-b716-f8f728fd718d.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:03:47.175Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ee4b1bb6-d769-46f9-8fdd-f775cfca0536.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:03:56.250Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/5bdba0fa-df7b-470f-8adc-09a1e59c4113.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10081-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:04:18.314Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10110": {
+      "vehicleId": "10110",
+      "slug": "10110-2015-mini-cooper-s",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/f22b9256-75c2-4f4b-82ee-b7a0b28780ab.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:04:28.200Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/c90fcb49-f2b8-4ada-8c69-330b8d70512d.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:04:49.391Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6b8197f5-d7a4-41a8-9d44-15e864d09970.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10110-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:04:57.966Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10127": {
+      "vehicleId": "10127",
+      "slug": "10127-2015-mazda-cx-5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/483395fe-f240-49b6-8ba0-455de0fada76.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:05:20.051Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/ca341259-3296-4eef-9094-1bc7dab6b4f5.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:05:28.916Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/e5bc9b38-3c2e-4f62-a847-7a1bab5a1911.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10127-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:05:46.928Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10163": {
+      "vehicleId": "10163",
+      "slug": "10163-2020-honda-grace",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/25f4ceba-a567-4613-a24b-d14e8365780e.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10163-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10163-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:10:14.060Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1609680e-efcd-4be9-9e6c-341416536f65.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10163-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10163-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:11:44.004Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10169": {
+      "vehicleId": "10169",
+      "slug": "10169-2015-bmw-523i-m-sports",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d5c64d92-9034-4341-9acf-8fc44b11a38d.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:06:04.245Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/6cee6b4c-814c-4016-8043-90c3f68b6aa5.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:06:12.098Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2e33ef36-0728-425b-a922-7e58e7b1f36c.jpg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10169-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:06:35.994Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10195": {
+      "vehicleId": "10195",
+      "slug": "10195-2015-ford-ranger",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/d487bbd1-2ee1-4f0f-98dc-dcd44fe908c7.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:06:54.849Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7797c6d2-32a7-4816-96be-705da3c968d9.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:07:12.135Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/9b97249f-b2bf-4be5-9f97-37fff25e5116.png",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10195-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:07:22.628Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10214": {
+      "vehicleId": "10214",
+      "slug": "10214-2015-audi-a5",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/1df70b4c-f90f-4059-88f5-5bd6e6d4dfb2.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:07:36.878Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/303161dd-ea67-4511-a798-5025bbd6ab73.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-2.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-2-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:07:46.506Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/cea9cda4-5b63-4f33-bd9e-1fcae64fd708.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10214-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T08:08:01.373Z",
+          "costUsd": 0.134
+        }
+      ]
+    },
+    "10244": {
+      "vehicleId": "10244",
+      "slug": "10244-2018-nissan-navara",
+      "images": [
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/7944e6a8-8dd0-4a39-8412-3994a9a69792.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10244-1.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10244-1-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:28:04.343Z",
+          "costUsd": 0.134
+        },
+        {
+          "source": "https://files.autostock.co.nz/Organisations/264/vehicles/full/2c8176e6-0961-4c38-b2bd-5b5f35ef5262.jpeg",
+          "full": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10244-3.jpg",
+          "thumb": "https://wmjiexw4k8vukn3n.public.blob.vercel-storage.com/vehicles/10244-3-thumb.jpg",
+          "scene": "dark-showroom",
+          "generatedAt": "2026-08-21T07:30:34.534Z",
+          "costUsd": 0.134
+        }
+      ]
+    }
+  }
 }
